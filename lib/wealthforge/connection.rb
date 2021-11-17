@@ -36,8 +36,8 @@ class WealthForge2::Connection
   def self.connection
     Faraday.new(url: WealthForge2.configuration.api_url) do |faraday|
       faraday.request :url_encoded
-      faraday.options.timeout = 5
-      faraday.options.open_timeout = 5
+      faraday.options.timeout = 15
+      faraday.options.open_timeout = 15
       faraday.use CustomErrors
       faraday.adapter Faraday.default_adapter
     end
