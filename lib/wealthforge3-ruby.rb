@@ -4,7 +4,7 @@ require "wealthforge/connection"
 require "wealthforge/investment"
 require "wealthforge/offering"
 
-module WealthForge2
+module WealthForge3
   class << self
     attr_accessor :configuration
   end

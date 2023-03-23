@@ -1,4 +1,4 @@
-class WealthForge2::ApiException < StandardError
+class WealthForge3::ApiException < StandardError
   def initialize(e = nil)
     puts "API error: #{e.inspect}"
     super e

@@ -1,4 +1,4 @@
-module WealthForge2
+module WealthForge3
   class Configuration
     attr_accessor :session_id
     attr_accessor :api_url

@@ -6,7 +6,7 @@ require "timeout"
 require "resolv-replace"
 require "jwt"
 
-class WealthForge2::Connection
+class WealthForge3::Connection
   def self.post(endpoint, params)
     begin
       response = connection.post do |req|
@@ -15,7 +15,7 @@ class WealthForge2::Connection
         req.body = params.to_json
       end
     rescue => e
-      raise WealthForge2::ApiException.new(e)
+      raise WealthForge3::ApiException.new(e)
     end
     JSON.parse(response.body)
   end
@@ -28,13 +28,13 @@ class WealthForge2::Connection
         req.body = params.to_json
       end
     rescue => e
-      raise WealthForge2::ApiException.new(e)
+      raise WealthForge3::ApiException.new(e)
     end
     JSON.parse(response.body)
   end
 
   def self.connection
-    Faraday.new(url: WealthForge2.configuration.api_url) do |faraday|
+    Faraday.new(url: WealthForge3.configuration.api_url) do |faraday|
       faraday.request :url_encoded
       faraday.options.timeout = 15
       faraday.options.open_timeout = 15
